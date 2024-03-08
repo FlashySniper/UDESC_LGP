@@ -21,6 +21,7 @@ int main(int argc, char * argv[]){
       }
     }
     k++;
+    resto = 0;
   }
   return 0;
 }
