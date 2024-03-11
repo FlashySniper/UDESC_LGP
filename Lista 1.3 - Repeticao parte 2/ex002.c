@@ -13,7 +13,6 @@ int main(int argc, char * argv[]){
   }
   e_x = e_x + termo; // Acumula termo no somatório
   }
-  printf("e elevado a %.3f = %.8f\n", x, e_x);
   printf("Tabela de Precisao: \ne elevado a %.2f = %.2f", x, e_x);
   printf("\ne elevado a %.2f = %.3f", x, e_x);
   printf("\ne elevado a %.2f = %.4f", x, e_x);
