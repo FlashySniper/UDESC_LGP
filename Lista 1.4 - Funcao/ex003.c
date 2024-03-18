@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
   int booleana = verifica_caractere(c);
   if (booleana == 1) {
     int num = c - '0';
-    printf("\nO caractere é um número e foi alterado para inteiro. Número : %i", num);
+    printf("\nO caractere eh um numero e foi alterado para inteiro. Numero : %i", num);
   } else {
     printf("\n%c foi o caractere digitado.", c);
   }
@@ -17,10 +17,10 @@ int main(int argc, char *argv[]) {
 }
 
 int verifica_caractere(char c) {
-  int booleana = 0;
+  int booleana = 0, i=0;
   char letra;
   char nums[10] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-  for (int i = 0; i <= 9; i++) {
+  for (i = 0; i <= 9; i++) {
     letra = nums[i];
     if (c == letra) {
       booleana = 1;
