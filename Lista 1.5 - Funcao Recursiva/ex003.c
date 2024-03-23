@@ -8,11 +8,13 @@ float somaIterativa(int n) {
   return soma;
 }
 
-float somaRecursiva(int n) {
+float somaRecursiva(float n) {
+  float divisao;
   if (n == 0) {
     return 0;
   } else {
-    return (1 / n) + somaRecursiva((n - 1));
+	divisao = (1 / n);
+    return divisao + somaRecursiva((n - 1));
   }
 }
 
