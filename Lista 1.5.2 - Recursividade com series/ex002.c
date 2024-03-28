@@ -1,20 +1,28 @@
 #include <stdio.h>
 #include <math.h>
 
-float determinaSerieIterativa(float x, int n){
-	int i;
-	float soma=0;
-	for(i=0; i<n; i++){
-		soma += (x pow i) / (fatorial(i));
-	}
-	return soma;
+float fatorial(float n){
+  if(n==0 || n==1){
+    return 1;
+  }
+  return n * fatorial(n-1);
 }
 
-float fatorial(float n){
-	if(n==0){
-		return 1;
-	}
-	return fatorial(n-1);
+float determinaSerieIterativa(float x, int n){
+  int i;
+  float soma=0;
+  for(i=0; i<n; i++){
+    soma += pow(x, i) / (fatorial(i));
+  }
+  return soma;
+}
+
+float determinaSerieRecursiva(float x, int n){
+  if(n==1){
+    return 1;
+  }else{
+    return determinaSerieRecursiva(x, n-1) + pow(x, n-1)/ fatorial(n-1);
+  }
 }
 
 int main() {
@@ -26,10 +34,10 @@ int main() {
   printf("Digite o numero de iteracoes: ");
   scanf("%i", &n);
   while(n<=0){
-	printf("Digite um valor positivo maior que zero: ");
-	scanf("%i", &n);
+  printf("Digite um valor positivo maior que zero: ");
+  scanf("%i", &n);
   }
-  e = determinaSerieIterativa(float x, int n);
-  printf("O resultado da Serie de Taylor, do valor %i eh: %f", x, e);	
+  e = determinaSerieRecursiva(x, n);
+  printf("O resultado da Serie de Taylor, do valor %.2f eh: %.2f", x, e);	
   return 0;
 }
